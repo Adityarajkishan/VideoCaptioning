@@ -1,2 +1,2 @@
 # VideoCaptioning
-This is a project to upload videos and generate the captions
+This is a project to upload videos and generate captions using ML.
