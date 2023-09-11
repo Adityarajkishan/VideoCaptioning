@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i&amp;display=swap">
+    <link rel="stylesheet" href="../static/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="../static/css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../static/css/vanilla-zoom.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top bg-body clean-navbar navbar-light">
+        <div class="container"><img src="../static/img/vide%20caption%20logo.png" style="width: auto;height: 40px;"><a class="navbar-brand logo" href="#">Ocular</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Video Upload and Processing</title>
+        <!-- Include CSS and JavaScript libraries (Bootstrap and jQuery) here -->
+    </head>
+    <body>
+        <main class="page landing-page">
+            <section class="clean-block clean-hero" style="background-image: url('../static/img/tech/image4.jpg'); color: rgba(9, 162, 255, 0.85);">
+                <div class="text">
+                    <h2>Ocular says HI!</h2>
+                    <p>Upload your video(s) here to generate captions</p>
+                    
+                    <!-- Input for Video File -->
+                    <form action="/upload" method="POST" enctype="multipart/form-data">
+                        <input type="file" accept="video/mp4" name="file" required>
+                        <button class="btn btn-primary" type="submit">Upload Video (MP4)</button>
+                    </form>
+                    <hr>
+                    <h2>{{ results }}</h2>
+                    
+                    <!-- Language Selection -->
+                    <form action="/process" method="POST">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" type="button" style="margin-bottom: 11px; margin-top: 8px;">
+                                Select Language
+                            </button>
+                            <div class="dropdown-menu">
+                                <button class="dropdown-item" type="submit" name="language" value="English">English</button>
+                                <button class="dropdown-item" type="submit" name="language" value="Spanish">Spanish</button>
+                                <button class="dropdown-item" type="submit" name="language" value="French">French</button>
+                                <button class="dropdown-item" type="submit" name="language" value="German">German</button>
+                                <button class="dropdown-item" type="submit" name="language" value="Japanese">Japanese</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <!-- Actions (Standard and Premium) -->
+                    <form action="/action" method="POST">
+                        <button class="btn btn-primary" type="submit" name="action" value="Standard">Standard</button>
+                        <button class="btn btn-primary" type="submit" name="action" value="Premium" style="margin-left: 16px;">Premium</button>
+                    </form>
+
+                    <h2>{{results1}}</h2>
+                    
+                    <!-- Batch Processing -->
+                    <form action="/batch" method="POST">
+                        <button class="btn btn-outline-light btn-lg" type="submit" name="batch-action" value="Single" style="padding-left: 8px; padding-right: 8px; padding-bottom: 4px; padding-top: 4px;">Single</button>
+                        <button class="btn btn-outline-light btn-lg" type="submit" name="batch-action" value="Batch" style="margin-left: 19px; padding-top: 4px; padding-bottom: 4px; padding-right: 4px; padding-left: 4px;">Batch</button>
+                    </form>
+                </div>
+            </section>    
+        </main>
+    </body>
+    </html>
+    
+    <footer class="page-footer dark"></footer>
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/js/baguetteBox.min.js"></script>
+    <script src="../static/js/vanilla-zoom.js"></script>
+    <script src="../static/js/theme.js"></script>
+</body>
+
+</html>
