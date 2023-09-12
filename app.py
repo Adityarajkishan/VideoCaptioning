@@ -44,10 +44,11 @@ def upload():
 @app.route('/action', methods=['POST'])
 def action():
     print(s3_key)
-    job_name = "minutes" # Change this to your desired job name
-    job_uri = f"s3://{S3_BUCKET}/{s3_key}"  # Change this to the S3 URI of your audio file
-    output_bucket = "storevdos"  # Change this to your desired output S3 bucket
-    language_code = "en-US"  # Change this to the language code of your audio (e.g., "en-US" for English)
+    #TODO: create the job_name as per the system timestamp
+    job_name = "newjob"
+    job_uri = f"s3://{S3_BUCKET}/{s3_key}"
+    output_bucket = "storevdos" 
+    language_code = "en-US" 
 
     settings = {
         "ChannelIdentification": False,
